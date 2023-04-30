@@ -1,0 +1,286 @@
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local InfJump = Instance.new("TextButton")
+local InfYeild = Instance.new("TextButton")
+local Aura = Instance.new("TextButton")
+local NoclipButton = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local SpeedButton = Instance.new("TextButton")
+local Close = Instance.new("TextButton")
+
+
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(124, 198, 255)
+Frame.Position = UDim2.new(0.342579216, 0, 0.0873124972, 0)
+Frame.Size = UDim2.new(0, 275, 0, 563)
+
+InfJump.Name = "InfJump"
+InfJump.Parent = Frame
+InfJump.BackgroundColor3 = Color3.fromRGB(255, 145, 111)
+InfJump.Position = UDim2.new(0.127272725, 0, 0.348638773, 0)
+InfJump.Size = UDim2.new(0, 200, 0, 50)
+InfJump.Font = Enum.Font.SourceSans
+InfJump.Text = "SpamJump"
+InfJump.TextColor3 = Color3.fromRGB(0, 0, 0)
+InfJump.TextScaled = true
+InfJump.TextSize = 14.000
+InfJump.TextWrapped = true
+
+InfYeild.Name = "InfYeild"
+InfYeild.Parent = Frame
+InfYeild.BackgroundColor3 = Color3.fromRGB(111, 75, 255)
+InfYeild.Position = UDim2.new(0.134545445, 0, 0.747466803, 0)
+InfYeild.Size = UDim2.new(0, 200, 0, 50)
+InfYeild.Font = Enum.Font.SourceSans
+InfYeild.Text = "Admin"
+InfYeild.TextColor3 = Color3.fromRGB(0, 0, 0)
+InfYeild.TextScaled = true
+InfYeild.TextSize = 14.000
+InfYeild.TextWrapped = true
+
+Aura.Name = "Aura"
+Aura.Parent = Frame
+Aura.BackgroundColor3 = Color3.fromRGB(25, 255, 68)
+Aura.Position = UDim2.new(0.130214244, 0, 0.613947272, 0)
+Aura.Size = UDim2.new(0, 200, 0, 50)
+Aura.Font = Enum.Font.SourceSans
+Aura.Text = "aura"
+Aura.TextColor3 = Color3.fromRGB(0, 0, 0)
+Aura.TextScaled = true
+Aura.TextSize = 14.000
+Aura.TextWrapped = true
+
+NoclipButton.Name = "NoclipButton"
+NoclipButton.Parent = Frame
+NoclipButton.BackgroundColor3 = Color3.fromRGB(229, 255, 49)
+NoclipButton.Position = UDim2.new(0.129334062, 0, 0.480053425, 0)
+NoclipButton.Size = UDim2.new(0, 200, 0, 50)
+NoclipButton.Font = Enum.Font.SourceSans
+NoclipButton.Text = "Noclip"
+NoclipButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+NoclipButton.TextScaled = true
+NoclipButton.TextSize = 14.000
+NoclipButton.TextWrapped = true
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(201, 255, 125)
+TextLabel.Position = UDim2.new(0.12727274, 0, 0.0706690922, 0)
+TextLabel.Size = UDim2.new(0, 207, 0, 146)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Forevers Prison Life UI V2"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 25.000
+TextLabel.TextWrapped = true
+
+SpeedButton.Name = "SpeedButton"
+SpeedButton.Parent = Frame
+SpeedButton.BackgroundColor3 = Color3.fromRGB(203, 49, 158)
+SpeedButton.Position = UDim2.new(0.127272725, 0, 0.873290777, 0)
+SpeedButton.Size = UDim2.new(0, 200, 0, 44)
+SpeedButton.Font = Enum.Font.SourceSans
+SpeedButton.Text = "Speed"
+SpeedButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+SpeedButton.TextScaled = true
+SpeedButton.TextSize = 100.000
+SpeedButton.TextWrapped = true
+
+Close.Name = "Close"
+Close.Parent = Frame
+Close.BackgroundColor3 = Color3.fromRGB(255, 16, 26)
+Close.Position = UDim2.new(0.843636394, 0, 0, 0)
+Close.Size = UDim2.new(0, 43, 0, 28)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close.TextScaled = true
+Close.TextSize = 14.000
+Close.TextWrapped = true
+
+
+local function EFQYJVB_fake_script() -- Frame.DragUI 
+	local script = Instance.new('LocalScript', Frame)
+
+	
+	local gui = script.Parent
+	
+	
+	local dragStart
+	local startPos
+	
+	
+	local function onMouseDown(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragStart = input.Position
+			startPos = gui.Position
+			input.Changed:connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragStart = nil
+				end
+			end)
+		end
+	end
+	
+	
+	local function onMouseMove(input)
+		if dragStart then
+			local delta = input.Position - dragStart
+			gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		end
+	end
+	
+	
+	game:GetService("UserInputService").InputBegan:connect(onMouseDown)
+	game:GetService("UserInputService").InputChanged:connect(onMouseMove)
+	
+end
+coroutine.wrap(EFQYJVB_fake_script)()
+local function ZSCUF_fake_script() -- InfJump.SpamJumpCode 
+	local script = Instance.new('LocalScript', InfJump)
+
+	local isJumping = false 
+	
+	function jump()
+		
+		isJumping = not isJumping
+	
+		
+		while isJumping do
+			game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+			wait(0.3)
+		end
+	end
+	
+	
+	script.Parent.Activated:Connect(jump)
+	
+end
+coroutine.wrap(ZSCUF_fake_script)()
+local function HHYFG_fake_script() -- InfYeild.Admin 
+	local script = Instance.new('LocalScript', InfYeild)
+
+	function infyeild()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", true))()
+	end
+	script.Parent.Activated:Connect(infyeild)
+end
+coroutine.wrap(HHYFG_fake_script)()
+local function FYHVAO_fake_script() -- Aura.Aura 
+	local script = Instance.new('LocalScript', Aura)
+
+	local plr = game.Players.LocalPlayer
+	local plra = game:GetService("Players")
+	local isAuraActive = false
+	
+	function aura()
+		while isAuraActive do
+			for i,v in pairs(plra:GetChildren()) do
+				if v.UserId ~= plr.UserId then
+					game:GetService("ReplicatedStorage").meleeEvent:FireServer(v)
+				end
+			end
+			wait()
+		end
+	end
+	
+	script.Parent.Activated:Connect(function()
+		isAuraActive = not isAuraActive 
+		if isAuraActive then
+			print("Aura is now active.")
+			aura()
+		else
+			print("Aura is now inactive.")
+		end
+	end)
+	
+end
+coroutine.wrap(FYHVAO_fake_script)()
+local function HYPGA_fake_script() -- NoclipButton.NoclipScript 
+	local script = Instance.new('LocalScript', NoclipButton)
+
+	local StealthMode = true -- If game has an anticheat that checks the logs
+	
+	local Indicator
+	
+	if not StealthMode then
+		local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
+		print("NOCLIP: Press E to Activate")
+		Indicator = Instance.new("TextLabel", ScreenGui)
+		Indicator.AnchorPoint = Vector2.new(0, 1)
+		Indicator.Position = UDim2.new(0, 0, 1, 0)
+		Indicator.Size = UDim2.new(0, 200, 0, 50)
+		Indicator.BackgroundTransparency = 1
+		Indicator.TextScaled = true
+		Indicator.TextStrokeTransparency = 0
+		Indicator.TextColor3 = Color3.new(0, 0, 0)
+		Indicator.TextStrokeColor3 = Color3.new(1, 1, 1)
+		Indicator.Text = "Noclip: Enabled"
+	end
+	
+	local noclipEnabled = false
+	local player = game.Players.LocalPlayer
+	local character = player.Character or player.CharacterAdded:Wait()
+	
+	local mouse = player:GetMouse()
+	
+
+	local function toggleNoclip()
+		noclipEnabled = not noclipEnabled
+	
+		if not StealthMode then
+			Indicator.Text = "Noclip: " .. (noclipEnabled and "Enabled" or "Disabled")
+		end
+	end
+	local button = script.Parent
+	button.MouseButton1Click:Connect(toggleNoclip)
+	
+	mouse.KeyDown:Connect(function(key)
+		if key == "e" and not button:IsFocused() then
+			toggleNoclip()
+		end
+	end)
+	
+	while true do
+		player = game.Players.LocalPlayer
+		character = player.Character
+	
+		if noclipEnabled then
+			for _, v in pairs(character:GetDescendants()) do
+				pcall(function()
+					if v:IsA("BasePart") then
+						v.CanCollide = false
+					end
+				end)
+			end
+		end
+	
+		game:GetService("RunService").Stepped:wait()
+	end
+	
+end
+coroutine.wrap(HYPGA_fake_script)()
+local function JIVQI_fake_script() -- SpeedButton.SpeedCode 
+	local script = Instance.new('LocalScript', SpeedButton)
+
+	function speed()
+		local A = game.Players.LocalPlayer
+		A.Character.Humanoid.WalkSpeed = 99
+	end
+	
+	script.Parent.Activated:Connect(speed)
+end
+coroutine.wrap(JIVQI_fake_script)()
+local function RZKMTNX_fake_script() -- Close.TerminateScript 
+	local script = Instance.new('LocalScript', Close)
+
+	function TerminateScript()
+		script.Parent.Parent.Visible = false
+	end
+	script.Parent.Activated:Connect(TerminateScript)
+	
+end
+coroutine.wrap(RZKMTNX_fake_script)()
